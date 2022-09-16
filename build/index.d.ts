@@ -1,6 +1,6 @@
 export * from './errors/badRequestError';
 export * from './errors/databaseError';
-export * from './errors/unAuthenticatedError';
+export * from './errors/unauthenticatedError';
 export * from './errors/forbiddenError';
 export * from './errors/validationError';
 export * from './errors/types/validationTypes';

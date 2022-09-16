@@ -16,7 +16,7 @@ var __exportStar = (this && this.__exportStar) || function(m, exports) {
 Object.defineProperty(exports, "__esModule", { value: true });
 __exportStar(require("./errors/badRequestError"), exports);
 __exportStar(require("./errors/databaseError"), exports);
-__exportStar(require("./errors/unAuthenticatedError"), exports);
+__exportStar(require("./errors/unauthenticatedError"), exports);
 __exportStar(require("./errors/forbiddenError"), exports);
 __exportStar(require("./errors/validationError"), exports);
 __exportStar(require("./errors/types/validationTypes"), exports);
