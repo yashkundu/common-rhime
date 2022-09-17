@@ -24,7 +24,8 @@ const SchemaValidator = (schema) => {
         const props = Object.keys(schema.describe().keys);
         let doc = {};
         props.forEach((prop) => {
-            doc[prop] = req.body[prop];
+            if (req.body[prop] != undefined)
+                doc[prop] = req.body[prop];
         });
         const { value, error } = schema.validate(doc);
         if (error)

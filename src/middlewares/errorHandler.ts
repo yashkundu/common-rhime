@@ -10,6 +10,18 @@ export const ErrorHandler = (err: Error, req: Request, res: Response, next: Next
     }
 
     //@ts-ignore
+    if(err instanceof SyntaxError && err.status===400 && 'body' in err){
+        //@ts-ignore
+        req.log.error(err)
+        return res.status(StatusCodes.BAD_GATEWAY).send({errors: [
+            {
+                msg: 'Error in your request body'
+            }
+        ]})
+    }    
+    
+    
+    //@ts-ignore
     req.log.fatal(err)
     res
     .status(StatusCodes.INTERNAL_SERVER_ERROR)
