@@ -1,6 +1,7 @@
 export * from './errors/badRequestError';
 export * from './errors/databaseError';
 export * from './errors/unauthenticatedError';
+export * from './errors/unauthorizedError';
 export * from './errors/forbiddenError';
 export * from './errors/validationError';
 export * from './errors/notFoundError';
@@ -12,4 +13,5 @@ export * from './middlewares/requiredConstraint';
 export * from './middlewares/schemaValidator';
 export * from './middlewares/uniqueConstraint';
 export * from './utils/jwt';
+export * from './utils/objectIdValidator';
 export * from './config/pinoConfig';

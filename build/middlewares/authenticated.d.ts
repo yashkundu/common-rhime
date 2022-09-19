@@ -1,7 +1,6 @@
-import { ObjectID } from "bson";
 import { Request, Response, NextFunction } from "express";
 interface userProp {
-    userId: ObjectID;
+    userId: string;
     userName: string;
 }
 declare global {
