@@ -1,6 +1,6 @@
 {
   "name": "@rhime/common",
-  "version": "1.0.6",
+  "version": "1.0.7",
   "description": "The common module for rhime project.",
   "main": "./build/index.js",
   "files": [
