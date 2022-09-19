@@ -3,11 +3,9 @@ import { CustomError } from "./customError";
 
 export class UnauthorizedError extends CustomError{
     statusCode: number = StatusCodes.UNAUTHORIZED
-    refresh: boolean = false;
 
-    constructor(public message: string, refresh: boolean){
+    constructor(public message: string){
         super(message)
-        this.refresh = refresh
         Object.setPrototypeOf(this, UnauthorizedError.prototype)
     }
 
