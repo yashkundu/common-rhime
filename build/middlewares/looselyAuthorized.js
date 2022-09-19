@@ -9,12 +9,12 @@ var __awaiter = (this && this.__awaiter) || function (thisArg, _arguments, P, ge
     });
 };
 Object.defineProperty(exports, "__esModule", { value: true });
-exports.tightlyAuthorized = void 0;
-const unauthorizedError_1 = require("../errors/unauthorizedError");
-const tightlyAuthorized = (req, res, next) => __awaiter(void 0, void 0, void 0, function* () {
+exports.looselyAuthorized = void 0;
+const forbiddenError_1 = require("../errors/forbiddenError");
+const looselyAuthorized = (req, res, next) => __awaiter(void 0, void 0, void 0, function* () {
     const anotherUserId = req.params.userId;
-    if (req.user.userId !== anotherUserId)
-        throw new unauthorizedError_1.UnauthorizedError('User is not authorized');
+    if (req.user.userId === anotherUserId)
+        throw new forbiddenError_1.ForbiddenError('Forbidden');
     next();
 });
-exports.tightlyAuthorized = tightlyAuthorized;
+exports.looselyAuthorized = looselyAuthorized;

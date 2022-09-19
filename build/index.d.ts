@@ -13,6 +13,7 @@ export * from './middlewares/notFoundMware';
 export * from './middlewares/requiredConstraint';
 export * from './middlewares/schemaValidator';
 export * from './middlewares/uniqueConstraint';
+export * from './middlewares/userIdValidator';
 export * from './utils/jwt';
 export * from './utils/objectIdValidator';
 export * from './config/pinoConfig';

@@ -9,12 +9,13 @@ var __awaiter = (this && this.__awaiter) || function (thisArg, _arguments, P, ge
     });
 };
 Object.defineProperty(exports, "__esModule", { value: true });
-exports.tightlyAuthorized = void 0;
-const unauthorizedError_1 = require("../errors/unauthorizedError");
-const tightlyAuthorized = (req, res, next) => __awaiter(void 0, void 0, void 0, function* () {
-    const anotherUserId = req.params.userId;
-    if (req.user.userId !== anotherUserId)
-        throw new unauthorizedError_1.UnauthorizedError('User is not authorized');
+exports.userIdValidator = void 0;
+const objectIdValidator_1 = require("../utils/objectIdValidator");
+const badRequestError_1 = require("../errors/badRequestError");
+const userIdValidator = (req, res, next) => __awaiter(void 0, void 0, void 0, function* () {
+    const { userId } = req.params;
+    if (!userId || !(0, objectIdValidator_1.objectIdValidator)(userId))
+        throw new badRequestError_1.BadRequestError('Invalid userId in the url param');
     next();
 });
-exports.tightlyAuthorized = tightlyAuthorized;
+exports.userIdValidator = userIdValidator;
