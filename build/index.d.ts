@@ -7,6 +7,7 @@ export * from './errors/validationError';
 export * from './errors/notFoundError';
 export * from './errors/types/validationTypes';
 export * from './middlewares/authenticated';
+export * from './middlewares/tightlyAuthorized';
 export * from './middlewares/errorHandler';
 export * from './middlewares/notFoundMware';
 export * from './middlewares/requiredConstraint';
