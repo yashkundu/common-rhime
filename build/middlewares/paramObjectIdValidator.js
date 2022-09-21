@@ -9,13 +9,16 @@ var __awaiter = (this && this.__awaiter) || function (thisArg, _arguments, P, ge
     });
 };
 Object.defineProperty(exports, "__esModule", { value: true });
-exports.userIdValidator = void 0;
+exports.paramObjectIdValidator = void 0;
 const objectIdValidator_1 = require("../utils/objectIdValidator");
 const badRequestError_1 = require("../errors/badRequestError");
-const userIdValidator = (req, res, next) => __awaiter(void 0, void 0, void 0, function* () {
-    const { userId } = req.params;
-    if (!userId || !(0, objectIdValidator_1.objectIdValidator)(userId))
-        throw new badRequestError_1.BadRequestError('Invalid userId in the url param');
-    next();
-});
-exports.userIdValidator = userIdValidator;
+// this is a generator for a middleware to verify object Id of a param
+const paramObjectIdValidator = (field) => {
+    return (req, res, next) => __awaiter(void 0, void 0, void 0, function* () {
+        const paramId = req.params[field];
+        if (!paramId || !(0, objectIdValidator_1.objectIdValidator)(paramId))
+            throw new badRequestError_1.BadRequestError(`Invalid ${field} in the url param`);
+        next();
+    });
+};
+exports.paramObjectIdValidator = paramObjectIdValidator;
