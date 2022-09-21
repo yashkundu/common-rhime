@@ -24,6 +24,7 @@ __exportStar(require("./errors/notFoundError"), exports);
 __exportStar(require("./errors/types/validationTypes"), exports);
 __exportStar(require("./middlewares/authenticated"), exports);
 __exportStar(require("./middlewares/tightlyAuthorized"), exports);
+__exportStar(require("./middlewares/looselyAuthorized"), exports);
 __exportStar(require("./middlewares/errorHandler"), exports);
 __exportStar(require("./middlewares/notFoundMware"), exports);
 __exportStar(require("./middlewares/requiredConstraint"), exports);
