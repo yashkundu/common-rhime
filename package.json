@@ -1,7 +1,7 @@
 {
   "name": "@rhime/common",
   "version": "1.0.15",
-  "description": "The common module for rhime project.",
+  "description": "The common module for rhime.",
   "main": "./build/index.js",
   "files": [
     "build/**/*"
@@ -13,7 +13,7 @@
     "pub": "git add . && git commit -m \"Updates\" && npm version patch && npm run build && npm publish --access=public"
   },
   "keywords": [],
-  "author": "",
+  "author": "yk",
   "license": "ISC",
   "dependencies": {
     "@types/express": "^4.17.14",

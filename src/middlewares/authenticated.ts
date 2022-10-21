@@ -4,7 +4,8 @@ import { validateAccessToken } from "../utils/jwt";
 
 interface userProp{
     userId: string;
-    userName: string
+    userName: string;
+    isAuth: boolean
 }
 
 declare global{
@@ -22,7 +23,8 @@ export const authenticated = async (req: Request, res: Response, next: NextFunct
         const payload = validateAccessToken(accessToken) as userProp
         req.user = {
             userId: payload.userId,
-            userName: payload.userName
+            userName: payload.userName,
+            isAuth: payload.isAuth
         }
     } catch (error) {
         throw new UnauthenticatedError('The user is not authenticated.', true)
