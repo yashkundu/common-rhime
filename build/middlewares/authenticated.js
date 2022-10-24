@@ -16,7 +16,7 @@ const authenticated = (req, res, next) => __awaiter(void 0, void 0, void 0, func
     var _a;
     const accessToken = (_a = req.signedCookies) === null || _a === void 0 ? void 0 : _a.accessToken;
     if (!accessToken)
-        throw new unauthenticatedError_1.UnauthenticatedError('The user is not authenticated', true);
+        throw new unauthenticatedError_1.UnauthenticatedError('The user is not authenticated');
     try {
         const payload = (0, jwt_1.validateAccessToken)(accessToken);
         req.user = {
@@ -26,7 +26,7 @@ const authenticated = (req, res, next) => __awaiter(void 0, void 0, void 0, func
         };
     }
     catch (error) {
-        throw new unauthenticatedError_1.UnauthenticatedError('The user is not authenticated.', true);
+        throw new unauthenticatedError_1.UnauthenticatedError('The user is not authenticated.');
     }
     next();
 });
