@@ -19,9 +19,13 @@ const authenticated = (req, res, next) => __awaiter(void 0, void 0, void 0, func
         throw new unauthenticatedError_1.UnauthenticatedError('The user is not authenticated');
     try {
         const payload = (0, jwt_1.validateAccessToken)(accessToken);
+        // @ts-ignore
         req.user = {
+            // @ts-ignore
             userId: payload.userId,
+            // @ts-ignore
             userName: payload.userName,
+            // @ts-ignore
             isAuth: payload.isAuth
         };
     }

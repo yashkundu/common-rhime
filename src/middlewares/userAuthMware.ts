@@ -5,6 +5,7 @@ import {Request, Response, NextFunction} from 'express'
 // req.userAuth -- {userId, isAuth} :)
 interface userAuthProp{
     userId: string;
+    userName: string;
     isAuth: boolean
 }
 
