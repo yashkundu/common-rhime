@@ -11,7 +11,7 @@ export class UnauthenticatedError extends CustomError{
 
     serializeError() {
         return [
-            {msg: `The user is not authenticated.}
+            {msg: `The user is not authenticated.`}
         ]
     }
 
