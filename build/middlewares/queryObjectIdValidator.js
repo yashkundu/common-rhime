@@ -16,7 +16,7 @@ const badRequestError_1 = require("../errors/badRequestError");
 const queryObjectIdValidator = (field) => {
     return (req, res, next) => __awaiter(void 0, void 0, void 0, function* () {
         const queryId = req.query[field];
-        if (!queryId || !(0, objectIdValidator_1.objectIdValidator)(queryId))
+        if (queryId && !(0, objectIdValidator_1.objectIdValidator)(queryId))
             throw new badRequestError_1.BadRequestError(`Invalid ${field} in the url param`);
         next();
     });
