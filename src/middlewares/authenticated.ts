@@ -18,7 +18,7 @@ declare global{
 
 export const authenticated = async (req: Request, res: Response, next: NextFunction) => {
     const accessToken = req.signedCookies?.accessToken
-    if(!accessToken) throw new UnauthenticatedError('The user is not authenticated', true)
+    if(!accessToken) throw new UnauthenticatedError('The user is not authenticated')
     try {
         const payload = validateAccessToken(accessToken) as userProp
         req.user = {
@@ -27,7 +27,7 @@ export const authenticated = async (req: Request, res: Response, next: NextFunct
             isAuth: payload.isAuth
         }
     } catch (error) {
-        throw new UnauthenticatedError('The user is not authenticated.', true)
+        throw new UnauthenticatedError('The user is not authenticated.')
     }
     next()
 }

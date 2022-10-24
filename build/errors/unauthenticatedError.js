@@ -12,11 +12,7 @@ class UnauthenticatedError extends customError_1.CustomError {
     }
     serializeError() {
         return [
-            { msg: `The user is not authenticated.}
-        ]
-    }
-
-} }
+            { msg: `The user is not authenticated.` }
         ];
     }
 }
