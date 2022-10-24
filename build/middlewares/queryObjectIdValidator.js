@@ -9,11 +9,11 @@ var __awaiter = (this && this.__awaiter) || function (thisArg, _arguments, P, ge
     });
 };
 Object.defineProperty(exports, "__esModule", { value: true });
-exports.paramObjectIdValidator = void 0;
+exports.queryObjectIdValidator = void 0;
 const objectIdValidator_1 = require("../utils/objectIdValidator");
 const badRequestError_1 = require("../errors/badRequestError");
 // this is a generator for a middleware to verify object Id of a query
-const paramObjectIdValidator = (field) => {
+const queryObjectIdValidator = (field) => {
     return (req, res, next) => __awaiter(void 0, void 0, void 0, function* () {
         const queryId = req.query[field];
         if (!queryId || !(0, objectIdValidator_1.objectIdValidator)(queryId))
@@ -21,4 +21,4 @@ const paramObjectIdValidator = (field) => {
         next();
     });
 };
-exports.paramObjectIdValidator = paramObjectIdValidator;
+exports.queryObjectIdValidator = queryObjectIdValidator;

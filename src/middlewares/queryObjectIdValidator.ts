@@ -7,7 +7,7 @@ import { BadRequestError } from '../errors/badRequestError'
 export const queryObjectIdValidator = (field: string) => {
     return async (req: Request, res: Response, next: NextFunction) => {
         const queryId = req.query[field] as string
-        if(!queryId || !objectIdValidator(queryId)) 
+        if(queryId && !objectIdValidator(queryId)) 
             throw new BadRequestError(`Invalid ${field} in the url param`)
         next()
     }

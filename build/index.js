@@ -29,6 +29,8 @@ __exportStar(require("./middlewares/requiredConstraint"), exports);
 __exportStar(require("./middlewares/schemaValidator"), exports);
 __exportStar(require("./middlewares/uniqueConstraint"), exports);
 __exportStar(require("./middlewares/paramObjectIdValidator"), exports);
+__exportStar(require("./middlewares/queryObjectIdValidator"), exports);
+__exportStar(require("./middlewares/userAuthMware"), exports);
 __exportStar(require("./utils/jwt"), exports);
 __exportStar(require("./utils/objectIdValidator"), exports);
 __exportStar(require("./config/pinoConfig"), exports);
