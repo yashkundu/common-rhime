@@ -2,6 +2,7 @@ import { Request, Response, NextFunction } from "express";
 interface userProp {
     userId: string;
     userName: string;
+    isAuth: boolean;
 }
 declare global {
     namespace Express {

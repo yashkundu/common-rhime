@@ -21,7 +21,8 @@ const authenticated = (req, res, next) => __awaiter(void 0, void 0, void 0, func
         const payload = (0, jwt_1.validateAccessToken)(accessToken);
         req.user = {
             userId: payload.userId,
-            userName: payload.userName
+            userName: payload.userName,
+            isAuth: payload.isAuth
         };
     }
     catch (error) {
