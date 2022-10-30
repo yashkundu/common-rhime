@@ -1,6 +1,7 @@
 import { Request, Response, NextFunction } from 'express';
 interface userAuthProp {
     userId: string;
+    userName: string;
     isAuth: boolean;
 }
 declare global {
