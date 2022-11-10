@@ -9,12 +9,11 @@ var __awaiter = (this && this.__awaiter) || function (thisArg, _arguments, P, ge
     });
 };
 Object.defineProperty(exports, "__esModule", { value: true });
-exports.userAuthMware = void 0;
-const userAuthMware = (req, res, next) => __awaiter(void 0, void 0, void 0, function* () {
-    if (req.headers['user-auth']) {
-        const obj = JSON.parse(req.headers['user-auth']);
-        req.userAuth = obj;
-    }
+exports.isAuthenticated = void 0;
+const unauthenticatedError_1 = require("../errors/unauthenticatedError");
+const isAuthenticated = (req, res, next) => __awaiter(void 0, void 0, void 0, function* () {
+    if (!req.userAuth)
+        throw new unauthenticatedError_1.UnauthenticatedError('The user is not authenticated.');
     next();
 });
-exports.userAuthMware = userAuthMware;
+exports.isAuthenticated = isAuthenticated;

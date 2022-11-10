@@ -15,6 +15,8 @@ export * from './middlewares/uniqueConstraint';
 export * from './middlewares/paramObjectIdValidator';
 export * from './middlewares/queryObjectIdValidator';
 export * from './middlewares/userAuthMware';
+export * from './middlewares/isAuthenticated';
+export * from './middlewares/isAuthorized';
 export * from './utils/jwt';
 export * from './utils/objectIdValidator';
 export * from './config/pinoConfig';

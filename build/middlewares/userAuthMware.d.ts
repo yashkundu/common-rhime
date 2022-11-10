@@ -11,5 +11,5 @@ declare global {
         }
     }
 }
-declare const userAuthMware: (req: Request, res: Response, next: NextFunction) => void;
+declare const userAuthMware: (req: Request, res: Response, next: NextFunction) => Promise<void>;
 export { userAuthMware };
