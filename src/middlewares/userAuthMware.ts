@@ -17,6 +17,7 @@ declare global{
     }
 }
 
+
 const userAuthMware = async (req: Request, res: Response, next: NextFunction) => {
     if(req.headers['user-auth']) {
         const obj = JSON.parse(req.headers['user-auth'] as string) as  userAuthProp
